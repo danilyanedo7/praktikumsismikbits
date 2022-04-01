@@ -2,7 +2,8 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: section
       before: |
-        <li><a href="./">Modul Praktiikum Sismik</a></li><img src="https://www.its.ac.id/biologi/wp-content/uploads/sites/21/2018/08/LOGO-BIO-PUTIH.png"
+        <li class="toc-logo"><a href="./">Modul Praktiikum Sismik</a></li><img src="https://www.its.ac.id/biologi/wp-content/uploads/sites/21/2018/08/LOGO-BIO-PUTIH.png"></a><li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
