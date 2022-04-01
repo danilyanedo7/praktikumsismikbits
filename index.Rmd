@@ -4,10 +4,11 @@ author: "Enny Zulaika, Edo Danilyan, & Sabila Fatimah"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
+# TAKSONOMI NUMERIK FENETIK
 
-# Klasifikasi Numerik-Fenetik Berdasarkan Data Fenotipik
+## Klasifikasi Numerik-Fenetik Berdasarkan Data Fenotipik
 
-## Pengantar
+### Pengantar
 
 Taksonomi numerik yang juga dikenal dengan sebutan taksonomi Adansonian (berdasarkan nama ahli sistematika Michael Adanson) didefinisikan sebagai pengelompokan unit taksonomis ke dalam sejumlah taksa dengan metode numerik berdasarkan karakteristik yang dimiliki. Taksonomi numerik didasarkan atas lima prinsip utama, yakni:
 
@@ -17,4 +18,4 @@ Taksonomi numerik yang juga dikenal dengan sebutan taksonomi Adansonian (berdasa
 4.	Taksa yang berbeda dibentuk atas sifat yang dimiliki.
 5.	Similaritas tidak bersifat filogenetis melainkan bersifat fenetis.
 
-
+## Klasifikasi Numerik-Fenetik Berdasarkan Profil Sidik Jari Molekular

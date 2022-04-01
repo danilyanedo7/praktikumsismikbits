@@ -1,4 +1,6 @@
+taksonomi-numerik-fenetik
 klasifikasi-numerik-fenetik-berdasarkan-data-fenotipik
 pengantar
-the-pool-of-tears
+klasifikasi-numerik-fenetik-berdasarkan-profil-sidik-jari-molekular
+taksonomi-filogenetik
 a-caucus-race-and-a-long-tale
