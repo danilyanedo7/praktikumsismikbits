@@ -4,6 +4,8 @@ author: "Enny Zulaika, Edo Danilyan, & Sabila Fatimah"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 cover-image: images/cover.png
+github-repo: danilyanedo7/praktikumsismikbits
+url: https://danilyanedo7.github.io/praktikumsismikbits/
 ---
 # TAKSONOMI NUMERIK FENETIK
 
