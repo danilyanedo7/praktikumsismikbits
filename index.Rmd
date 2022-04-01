@@ -3,6 +3,7 @@ title: "Modul Praktikum Sistematika Mikrobia"
 author: "Enny Zulaika, Edo Danilyan, & Sabila Fatimah"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+cover-image: images/cover.png
 ---
 # TAKSONOMI NUMERIK FENETIK
 
