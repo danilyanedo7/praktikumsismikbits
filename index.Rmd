@@ -7,3 +7,14 @@ site: bookdown::bookdown_site
 
 # Klasifikasi Numerik-Fenetik Berdasarkan Data Fenotipik
 
+## Pengantar
+
+Taksonomi numerik yang juga dikenal dengan sebutan taksonomi Adansonian (berdasarkan nama ahli sistematika Michael Adanson) didefinisikan sebagai pengelompokan unit taksonomis ke dalam sejumlah taksa dengan metode numerik berdasarkan karakteristik yang dimiliki. Taksonomi numerik didasarkan atas lima prinsip utama, yakni:
+
+1.	Taksonomi yang ideal adalah taksonomi yang mengandung informasi terbesar yaitu yang didasarkan atas sebanyak-banyaknya karakter.
+2.	Masing-masing karakter diberi nilai yang setara (a priori) dalam mengkonstruksi takson yang bersifat alami.
+3.	Tingkat kedekatan antara dua strain/OTU (operational taxonomical unit) merupakan fungsi similaritas yang dimiliki bersama.
+4.	Taksa yang berbeda dibentuk atas sifat yang dimiliki.
+5.	Similaritas tidak bersifat filogenetis melainkan bersifat fenetis.
+
+
