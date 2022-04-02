@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2022-04-02" />
+<meta name="date" content="2022-04-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,13 +206,15 @@ GenBank Graphics
 <li>Sequence Alignment dengan Program ClustalX 2.1 (Larkin et al., 2001)
 Alignment bertujuan untuk menata sequence agar satu sama lain diletakkan sesuai dengan posisi homologi antar sequence. Hanya berdasarkan alignment inilah kita dapat membandingkan antar sequence gen 16S rRNA dari masing-masing strain mikrobia yang akan diklasifikasikan. Alignment menggunakan program ClustalX dilakukan dengan mempersiapkan data sequence dalam format FASTA. Dataset sejumlah sequence yang telah didapatkan dikumpulkan terlebih dahulu ke dalam 1 file Notepad dengan awalan dari setiap sequence diberikan tanda “&gt;”. Contohnya dapat dilihat pada sequence berikut:</li>
 </ol>
-<p>‘&gt;Allochromatium vinosum DSM 180 agagtttgatcctggctcagattgaacgctggcggcatgcctaacacatgcaa…’&gt;Chlorobium luteolum DSM 273 aggaaagcggcttcggccgggagtacttggcgcaagggtgagtaaggcatagg…
-’&gt;Chloroflexus aurantiacus J-10-fl aaaggaggtgatccagccgcaccttccggtacggctaccttgttacgacttcg…</p>
+<p>’&gt;Allochromatium vinosum DSM 180 agagtttgatcctggctcagattgaacgctggcggcatgcctaacacatgcaa…</p>
+<p>’&gt;Chlorobium luteolum DSM 273 aggaaagcggcttcggccgggagtacttggcgcaagggtgagtaaggcatagg…</p>
+<p>’&gt;Chloroflexus aurantiacus J-10-fl aaaggaggtgatccagccgcaccttccggtacggctaccttgttacgacttcg…</p>
 <p>Penamaan dalam pembuatan dataset sequence ini juga perlu diperhatikan. Disarankan untuk menyingkat nama dari setiap sequence yang ada karena program ClustalX akan secara otomatis memotong karakter nama apabila melebihi 30 karakter. Selain itu, hasil alignment ClustalX yang akan digunakan dalam program Phylip (.phy) juga akan secara otomatis memotong karakter nama apabila melebihi 10 karakter. Hal ini akan membingungkan apabila pembeda antar nama sequence satu dengan lainnya terletak pada posisi karakter &gt;10, karena ketika dipotong akan menghasilkan nama yang sama antar sequence satu dengan lainnya. Dengan demikian, sebaiknya kita membuat daftar baru (dengan MS Word atau Notepad) yang berisi rincian nama sequence beserta singkatannya. Singkatan nama ini yang akan kita gunakan dalam dataset yang akan diproses dalam ClustalX. Contoh dataset diatas setelah namanya disingkat akan menjadi:
-‘&gt;AvinDSM180
-agagtttgatcctggctcagattgaacgctggcggcatgcctaacacatgcaa…’&gt;ClutDSM273
-aggaaagcggcttcggccgggagtacttggcgcaagggtgagtaaggcatagg…
-’&gt;ChaurJ-10-fl aaaggaggtgatccagccgcaccttccggtacggctaccttgttacgacttcg…</p>
+’&gt;AvinDSM180
+agagtttgatcctggctcagattgaacgctggcggcatgcctaacacatgcaa…</p>
+<p>’&gt;ClutDSM273
+aggaaagcggcttcggccgggagtacttggcgcaagggtgagtaaggcatagg…</p>
+<p>’&gt;ChaurJ-10-fl aaaggaggtgatccagccgcaccttccggtacggctaccttgttacgacttcg…</p>
 <p>Perlu diperhatikan bahwa pemberian nama tidak boleh mengandung spasi. Penyingkatan nama sequence hingga satu karakter (A-Z) sebaiknya tidak dilakukan karena akan membuat program ClustalX salah mengenali karakter nama menjadi salah satu komponen sequence nukleotida atau asam amino.</p>
 <p>Jadi, contoh seperti:
 ’&gt;A
