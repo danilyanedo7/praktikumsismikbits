@@ -1,3 +1,12 @@
 # TAKSONOMI FILOGENETIK
 
+## Klasifikasi Molekular Filogenetik Berdasarkan Gen 16S rRNA
+
+### Pengantar
+
+Klasifikasi molekular filogenetik merupakan klasifikasi yang disusun dengan mempertimbangkan jalur evolusi setiap organisme yang dikaji. Hal ini berbeda dengan klasifikasi fenetik yang hanya melihat hubungan antar organisme berdasarkan karakter yang ada pada saat ini (Priest & Austin, 1993). Dalam prosesnya, klasifikasi molekular filogenetik menggunakan data berupa urutan (sequence) nukleotida pada DNA atau asam amino pada protein. Sequence nukleotida yang digunakan dalam klasifikasi molekular filogenetik harus merupakan sequence yang diwariskan langsung oleh nenek moyang (homolog) serta memiliki kesamaan sejarah evolusi. Sebuah sequence dapat disebut sebagai marker molekular apabila memenuhi persyaratan berupa: (1) terdistribusi pada seluruh organisme, (2) memiliki kesetaraan fungsi pada seluruh organisme, dan (3) memegang peranan vital bagi kehidupan organisme. Hal ini menjadikan marker molekular merupakan sequence yang tepat untuk digunakan dalam studi klasifikasi filogenetik.
+
+Gen 16S rRNA merupakan salah satu contoh marker molekular karena terdapat pada organisme baik yang berada pada domain Bacteria, Archaea, serta Eukarya. Saat ini, informasi mengenai sequence gen 16S rRNA sudah sangat banyak tersedia pada database internasional dan juga sudah dijadikan standar penetapan suatu spesies baru dalam studi taksonomi. Pada praktikum ini kita akan mencoba mengklasifikasikan sejumlah bakteri dengan cara merekonstruksi pohon filogenetik berdasarkan sequence gen 16S RNA yang dimiliki.
+
+
 

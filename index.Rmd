@@ -21,4 +21,66 @@ Taksonomi numerik yang juga dikenal dengan sebutan taksonomi Adansonian (berdasa
 4.	Taksa yang berbeda dibentuk atas sifat yang dimiliki.
 5.	Similaritas tidak bersifat filogenetis melainkan bersifat fenetis.
 
+Tujuan utama taksonomi numerik adalah untuk menghasilkan suatu klasifikasi yang bersifat teliti, reprodusibel, serta padat informasi. Aplikasi taksonomi numerik dalam konstruksi klasifikasi biologis memungkinkan terwujudnya sirkumskripsi takson berdasarkan prinsip yang mantap dan bukan sekedar klasifikasi yang bersifat subjektif belaka. Teknik klasifikasi meliputi empat tahapan, yaitu:
+
+1.	Strain mikrobia (n) yang akan diklasifikasikan dikoleksi lalu ditentukan karakter fenotipiknya dalam jumlah besar (t) yang mencakup sifat yang tertera pada Tabel 1.1. Data yang diperoleh disusun dalam suatu matriks n x t.
+2.	Strain mikrobia diklasifikasikan berdasarkan nilai similaritas atau disimilaritas yang dihitung dari data n x t.
+3.	Strain yang mirip akan dimasukkan ke dalam satu kelompok dengan menggunakan algoritma pengklasteran (clustering algorithm).
+4.	Kelompok yang dibentuk secara numerik lalu dipelajari dan karakter yang bersifat membedakan (separating character) dipilih diantara data dalam matriks untuk selanjutnya digunakan dalam dentifikasi.
+
+### Cara Kerja
+
+Tahapan kerja dalam klasifikasi numerik-fenetik terdiri dari (1) pemilihan strain uji, (2) pemilihan jenis pengujian, (3) pencatatan hasil pengujian, (4) data coding, (5) analisis komputer, dan (6) interpretasi hasil (Priest & Austin, 1993). Namun demikian, dalam praktikum ini kita akan menggunakan data hasil pengujian dari artikel penelitian yang terdapat pada jurnal ilmiah dalam bentuk tabel n x t. Namun, format yang digunakan adalah tidy data, yaitu setiap kolom merepresentasikan karakter (t) sementara setiap baris merepresentasikan sampel mikroorganisme(n). Dengan demikian, kita telah melewati tahapan kerja 1–3 dan langsung menuju tahapan data coding dan seterusnya.
+
+Tabel 1.1. Kelompok karakter yang digunakan dalam taksonomi numerik bakteri (Priest & Austin, 1993).
+
+```{r echo=FALSE}
+library(readxl)
+library(flextable)
+karakter <- readxl::read_excel("C:/Users/Lenovo/Documents/praktikumsismikbits/data/karakter.xlsx")
+table1 <- flextable(karakter)
+table1
+
+```
+#### Penelusuran Sumber Data
+
+Dalam praktikum ini, data untuk klasifikasi numerik-fenetik didapatkan melalui hasil penelusuran artikel ilmiah. Artikel ilmiah tersebut dapat dicari dari internet melalui Google Search dengan mengetikan kata-kata kunci terkait klasifikasi numerik fenetik seperti contohnya “numerical taxonomy of...” atau “numerical classification of...” Salah satu contoh artikel dapat dilihat pada West et al. (1986) yang mempelajari klasifikasi spesies anggota genus Vibrio yang diisolasi dari perairan. Data yang terdapat pada artikel tersebut selanjutnya akan dijadikan contoh pada panduan praktikum ini.
+Setelah mendapatkan artikel jurnal, telusuri tabel n x t yang terdapat di dalam artikel tersebut. Walaupun sering tidak disebut sebagai tabel n x t, namun tabel n x t dapat terlihat dari cirinya yang mengandung informasi mengenai strain-strain mikrobia (n) serta jenis karakter yang diujikan (t). Karakter yang terkandung dalam tabel n x t pada umumnya akan dikelompokan seperti pada Tabel 1.1
+
+#### Konstruksi Tabel
+
+Berdasarkan tabel n x t yang diperoleh dari artikel jurnal penelitian, selanjutnya kita membuat tabel n x t sendiri. Tabel n x t dapat dibuat dengan program Microsoft Excel (MS Excel). Pada MS Excel, strain (n) dimasukan sebagai baris dan karakter pengujian (t) dimasukan sebagai kolom (Gambar 1.1.). Pengkodean pada tabel n x t menggunakan sistem biner, yakni notasi “1” dan “0”. Notasi “1” diberikan apabila ada kehadiran suatu sifat dan notasi “0” diberikan untuk ketidakhadiran suatu sifat. Jika dilihat pada Gambar 1 tersebut, kemampuan V. fluvialis untuk dapat tumbuh pada medium dengan kandungan NaCl 6% menjadikan spesies tersebut mendapatkan notasi “1” pada karakter “Pertumbuhan 6% NaCl”. Sebaliknya, V. fluvialis tidak dapat tumbuh pada medium dengan kandungan NaCl 0% sehingga membuatnya mendapatkan notasi “0” untuk sifat tersebut. Dalam laporan tertulis atau publikasi ilmiah, penggunaan notasi “1” dan “0” pada n x t sebagai indikasi kehadiran dan ketidakhadiran suatu sifat pada suatu strain terkesan kurang lazim. Pada umumnya, notasi “+” dan “–“ digunakan sebagai pengganti “1” dan “0”. Namun demikian, notasi “1” dan “0” pada n x t dimaksudkan untuk kepentingan analisis menggunakan program komputer, karena program tersebut tidak dapat mengenali notasi “+” dan “–“.
+
+```{r echo=FALSE}
+library(flextable)
+contohdata <- readxl::read_excel("C:/Users/Lenovo/Documents/praktikumsismikbits/data/contohdata.xlsx")
+table2 <- flextable(contohdata)
+table2
+```
+
+Perlu diketahui bahwa pemilihan spesies dalam konstruksi tabel n x t sebaiknya mencakup type strain untuk spesies tersebut. Dengan kata lain, sangat disarankan apabila data yang digunakan juga memiliki hasil pengujian untuk type strain. Suatu type strain merupakan strain yang mewakili suatu spesies atau dengan kata lain type strain merupakan pemilik nama spesies. Kehadiran suatu type strain dalam proses konstruksi dendrogram berfungsi sebagai acuan bagi strain-strain lainnya yang memiliki kesamaan nama spesies dengan type strain, sehingga dapat lebih meyakinkan posisi strain-strain tersebut dalam suatu dendrogram
+
+#### Konstruksi Dendogram Menggunakan Bahasa Pemrograman R
+
+```{r}
+library(tidyverse)
+library(factoextra)
+mie_instan <- data.frame(nama = c("Indomie rendang", "Indomie soto", "Indomie kari", "Sedap goreng", "Sedap soto", "sedap kari"),
+                         kuah = c(0, 1, 1, 0, 1, 1),
+                         garam = c(1.5, 1.4, 1.5, 1.8, 2, 2.1),
+                         fiber = c(10, 12, 12, 15, 15, 15),
+                         kalori = c(1015, 1016, 1017, 1700, 1750, 1690))
+
+mie_instan1 <- readxl::read_excel("C:/Users/Lenovo/Documents/mie_instan.xlsx")
+mie_instan1
+View(mie_instan)
+head(mie_instan)
+datamie <- mie_instan |> column_to_rownames(var = "nama")
+dist_mie <- dist(datamie, method = 'euclidean')
+clust_mie <- hclust(dist_mie, method = "average")
+plot(clust_mie)
+
+```
+
+
 ## Klasifikasi Numerik-Fenetik Berdasarkan Profil Sidik Jari Molekular

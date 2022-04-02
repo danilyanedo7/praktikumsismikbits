@@ -1,6 +1,12 @@
 taksonomi-numerik-fenetik
 klasifikasi-numerik-fenetik-berdasarkan-data-fenotipik
 pengantar
+cara-kerja
+penelusuran-sumber-data
+konstruksi-tabel
+konstruksi-dendogram-menggunakan-bahasa-pemrograman-r
 klasifikasi-numerik-fenetik-berdasarkan-profil-sidik-jari-molekular
 taksonomi-filogenetik
+klasifikasi-molekular-filogenetik-berdasarkan-gen-16s-rrna
+pengantar-1
 daftar-pustaka
