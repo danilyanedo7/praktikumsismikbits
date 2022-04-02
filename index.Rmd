@@ -1,6 +1,15 @@
 --- 
 title: "Modul Praktikum Sistematika Mikrobia"
-author: "Enny Zulaika, Edo Danilyan, & Sabila Fatimah"
+author:
+- name: Enny Zulaika
+  email: ennyzulaika@gmail.com
+  affiliation: Departemen Biologi, Fakultas Sains dan Analitika Data, Institut Teknologi Sepuluh Nopember
+- name: Edo Danilyan
+  email: danilyanedo7@gmail.com
+  affiliation: Departemen Biologi, Fakultas Sains dan Analitika Data, Institut Teknologi Sepuluh Nopember
+- name: Sabila Fatimah
+  email: sabilafatimah@gmail.com
+  affiliation: Departemen Biologi, Fakultas Sains dan Analitika Data, Institut Teknologi Sepuluh Nopember
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 cover-image: images/cover.png
@@ -87,3 +96,37 @@ plot(clust_mikro)
 
 
 ## Klasifikasi Numerik-Fenetik Berdasarkan Profil Sidik Jari Molekular
+
+### Pengantar
+
+Selain data fenotipik, data berupa profil sidik jari molekular (molecular fingerprints) juga dapat digunakan dalam studi taksonomi mikrobia. Profil yang digunakan dapat berasal dari DNA, RNA, atau protein. Studi klasifikasi menggunakan profil sidik jari molekular termasuk ke dalam studi kemosistematik bersama dengan analisis komponen selular lainnya (Priest & Austin, 1993). Teknik yang paling umum digunakan dalam studi klasifikasi berdasarkan profil sidik jari molekular adalah restriction fragment length polymorphisms (RFLP). Prinsip dasar dari penggunaan RFLP adalah adanya kesamaan situs restriksi antara satu mikroorganisme dengan mikroorganisme lainnya yang dapat dikenali oleh enzim restriksi endonuklease tertentu. Hal ini berarti bahwa distribusi situs- situs restriksi tersebut dapat memberi gambaran mengenai kemiripan antara satu mikroorganisme dengan lainnya secara molekular.
+
+### Cara Kerja
+
+Seperti halnya pada praktikum acara 1, data yang dipakai dalam praktikum acara 2 ini diperoleh dari artikel penelitian yang terdapat pada jurnal ilmiah dalam bentuk elektroforegram (foto elektroforesis).
+
+1.	Penelusuran Sumber Data
+Data yang digunakan dalam praktikum ini berupa elektroforegram sidik jari (fingerprint) molekular. Data fingerprint tersebut dapat berupa hasil ribotyping, RFLP, RAPD, dan lainnya. Elektroforegram dari suatu artikel jurnal dapat di-crop menggunakan program PDF reader seperti Adobe Reader melalui menu Tools → Select & Zoom
+→ Snapshot Tool. Buat file gambar (image file) format JPEG atau PNG dari elektroforegram tersebut dengan memblok elektroforegram yang diinginkan dan copy (ctrl+C) ke program Paint.
+
+2.	Pembuatan Diagrammatic Representative
+Diagrammatic representative merupakan sebuah gambaran skematis yang mewakili elektroforegram yang dianalisis. Penggunaan diagrammatic representative ini barfungsi untuk mempertegas kehadiran atau ketidakhadiran suatu band dalam elektroforegram. Kejelasan mengenai hadir atau tidaknya sebuah band merupakan hal yang penting karena band tersebut diasumsikan sebagai karakter dalam data coding.
+ 
+Pembuatan diagrammatic representative dapat dilakukan dengan program photo editor seperti Corel Draw, Adobe Photoshop, atau Paint Shop Pro. Secara umum, tahapan pembuatannya meliputi input gambar, penambahan layer transparan, dan menggambarkan suatu garis pada layer transparan tersebut yang berpandu pada band elektroforegram dibawahnya. Dalam praktikum ini program Paint Shop Pro (PSP) akan digunakan untuk pembuatan diagrammatic representative ini. Pertama, buka program PSP dan masukan file gambar elektroforegram yang telah dibuat sebelumnya melalui menu File → Open. Setelah gambar elektroforegram muncul, akan terdapat suatu kotak bertuliskan Layer pada sisi sebelah kanan. Apabila kotak ini tidak muncul, kita dapat memunculkannya melalui ikon Toggle Layer Palette pada sisi atas, ikon kedua dari kanan. Pada layer palette tersebut, gambar yang kita masukan sebelumnya dikategorikan sebagai Background. Kita dapat menambahkan layer baru dengan menekan ikon Add New Layer yang terletak pada pojok kiri bawah layer palette. Sebuah layer baru yang muncul akan diberi nama Layer 1 secara otomatis dan terletak di atas layer Background. Klik ikon Layer 1 untuk mengaktifkannya dan Pada Layer 1 inilah kita akan membuat diagrammatic representative dari elektroforegram.
+
+Setelah memilih Layer 1, aktifkan control palette dengan menekan ikon Toggle Control Palette yang terletak 3 ikon di sebelah kiri Toggle Layer Palette. Menu control palette berfungsi untuk mengatur jenis, ketebalan, bentuk, dan ukuran brush tip yang akan digunakan untuk mewarnai Layer 1 berdasdarkan cetakan yang ada pada elektroforegram. Sebelum mengatur apapun yang ada pada control palette, aktifkan Paint Brushes yang terletak pada tool palette (menu di pojok kiri). Pemilihan warna dapat dilakukan pada color palette (menu di pojok kanan). Kedua menu tersebut masing-masing dapat diaktifkan melalui Toggle Tool Palette dan Toggle Color Palette. Menu Control Palette terdiri atas dua submenu, yakni Tool Controls dan Brush Tip. Untuk sementara, abaikan dahulu submenu Tool Controls dan masuk ke submenu Brush Tip. Pada submenu Brush Tip terdapat pilihan Shape, Size, Opacity, Hardness, Density, dan Step yang masing-masing berfungsi untuk mengatur jenis kuas, ukuran kuas, ketebalan warna, ketegasan bentuk kuas, kepadatan warna, dan gradasi kuas. Hasil pengaturan enam parameter ini langsung ditampilkan pada layar di kiri atas submenu Brush Tip. Sebagai contoh, pengaturan Brush Tip yang digunakan meliputi Shape: Horizontal, Opacity: 25, Hardness: 50, Density: 100, dan Step: 1. Size yang digunakan bergantung pada ukuran image file yang digunakan. Sebelum mulai membuat diagrammatic representative, sebaiknya kita mengujikan hasil pengaturan pada submenu Brush Tip untuk melihat kecocokannya langsung pada Layer 1.
+ 
+Hasil pengujian kemudian dapat dihapus dengan mengaktifkan ikon Eraser pada tool palette. Bentuk dan ukuran Eraser juga diatur pada menu Control Palette yang sama dengan Brush Tip. Hasil penggambaran dapat dilihat pada Gambar 2.1.
+Setelah penggambaran selesai dilakukan, simpan file tersebut (PSP akan secara otomatis menyimpannya dalam format .psp). File .psp ini juga dapat dibuka dengan program image viewer seperti ACDSee. Diagrammatic representative yang ditampilkan adalah hasil penggambaran yang dilakukan tanpa menyertakan background foto elektroforegram.
+((((NOTE GAMBAR))))
+
+Dengan demikian, kita dapat menghilangkan foto elektroforegram dengan meng-klik ikon Background pada Layer Palette dan kemudian Delete. Hasilnya hanya akan tersisa pita-pita berwarna hasil penggambaran sebelumnya (Gambar 2.2). Simpan kembali file ini dalam format .jpg (gunakan menu Save As) dengan nama lain agar tidak mengganti file sebelumnya.
+
+3.	Data Coding dan Analisis
+Diagrammatic representative yang dihasilkan merupakan sumber untuk data coding. Dalam hal ini, setiap pita yang tergambarkan pada diagrammatic representative merupakan karakter, sehingga total seluruh pita dari seluruh strain mencerminkan jumlah karakter (t) pada tabel n x t. Konversi diagrammatic representative menjadi tabel n x t dapat dilakukan secara intuitif dengan melihat kesejajaran pita antar strain dan menggolongkan pita-pita yang sejajar sebagai satu karakter (Gambar 2.3). Namun demikian, apabila jumlah pita terlalu banyak maka diperlukan garis bantu untuk melihat kesejajaran antar pita. Garis bantu tersebut dapat dibuat pada program Paint. Buka file gambar diagrammatic representative dalam format .jpg dengan program Paint dan klik ikon Line yang terletak pada bagian atas. Setelah itu buat garis dari ujung kiri ke ujung kanan gambar dimulai dari pita teratas. Pita-pita yang bersinggungan dengan garis tersebut dinyatakan sejajar dan menempati karakter yang sama.
+
+Tabel n x t yang telah dibuat selanjutnya dianalisis secara numerik-fenetik sama seperti pada analisis data fenotipik. Analisis dilakukan menggunakan program MVSP 3.1 (Kovach, 2007) dengan indeks similaritas SSM dan SJ serta algoritme pengklasteran UPGMA.
+
+4.	Interpretasi Hasil
+Hasil analisis numerik-fenetik data fingerprint molekular ini sekilas terlihat sama dengan data fenotipik, yakni terdiri atas matriks similaritas, analisis klaster, dan dendrogram. Akan tetapi, perlu diperhatikan bahwa kaidah yang diterapkan pada data fenotipik tidak harus diterapkan pada data fingerprint ini. Salah satu syarat seperti digunakannya minimal 50 karakter pada data fenotipik tidak perlu diterapkan pada data fingerprint. Hal ini didasarkan pada fakta bahwa profil fingerprint yang ada dipandang hanya sebagai salah satu karakter saja dan tabel n x t yang dikonstruksi merupakan turunan dari satu karakter tersebut.
+

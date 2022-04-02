@@ -6,7 +6,15 @@ penelusuran-sumber-data
 konstruksi-tabel
 konstruksi-dendogram-menggunakan-bahasa-pemrograman-r
 klasifikasi-numerik-fenetik-berdasarkan-profil-sidik-jari-molekular
+pengantar-1
+cara-kerja-1
 taksonomi-filogenetik
 klasifikasi-molekular-filogenetik-berdasarkan-gen-16s-rrna
-pengantar-1
+pengantar-2
+cara-kerja-2
+persiapan-data
+rekonstruksi-pohon-filogenetik-dengan-phylip-v3.6.9-felsenstein-2005
+konstruksi-pohon-filogeni-menggunakan-software-mega-4.0
+mengunduh-sequence-nukleotida-dari-genbank
+rekonstruksi-pohon-filogenetik
 daftar-pustaka

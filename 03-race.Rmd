@@ -1,1 +1,24 @@
 # DAFTAR PUSTAKA
+
+Brenner, D. J., N. R. Krieg, J. T. Staley & G. M. Garrity. 2005. Bergey's manual of systematic bacteriology 2nd edition, volume 2: The Proteobacteria, Part B: The Gammaproteobacteria. Springer Pub.: USA.
+
+Chun, J. 1995. Computer-assisted clasification and identification of actinomycetes. Ph.D. Thesis. University of Newcastle, UK.
+
+Felsenstein, J. 2005. PHYLIP (Phylogeny Inference Package) version 3.6. Distributed by the author. Department of Genome Sciences, University of Washington, Seattle, USA.
+
+Goodfellow, M. 1997. Microbial Systematics. In Microbiology and Medical Microbiology. University of Newcastle Upon Tyne.
+
+Kovach, W.L., 2007. MVSP - A MultiVariate Statistical Package for Windows, ver. 3.1. Kovach Computing Services, Pentraeth, Wales, U.K.
+
+Larkin, M. A., G. Blackshields, N. P. Brown, R. Chenna, P. A. McGettigan, H. McWilliam, F. Valentin, I. M. Wallace, A. Wilm, R. Lopez, J. D. Thompson, T. J. Gibson, & D. G. Higgins.2007. Clustal W and Clustal X version 2.0. Bioinformatics 23: 2947–2948.
+
+Page, R. D. M. 1996. TREEVIEW: An application to display phylogenetic trees on personal computers. Computer Applications in the Biosciences 12: 357–358.
+
+Priest, F. & B. Austin. 1993. Modern Bacterial Taxonomy 2nd Edition. Chapman & Hall Pub.: England.
+
+Sembiring, L. 2002. Sistematika Mikrobia (BIO 668) Petunjuk Praktikum. Fakultas Biologi, Universitas Gadjah Mada, Yogyakarta, Indonesia.
+
+Sembiring, L. 2002. Sistematika Molekular (BIO 765) Petunjuk Praktikum. Fakultas Biologi, Universitas Gadjah Mada, Yogyakarta, Indonesia.
+
+West, P. A., P. R. Brayton, T. N. Bryant, & R. R. Colwell. 1986. Numerical taxonomy of vibrios isolated from aquatic environments. International Journal of Systematic Bacteriology 36 (4): 531–543.
+
