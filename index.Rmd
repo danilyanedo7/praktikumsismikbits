@@ -1,8 +1,8 @@
 --- 
 title: "Modul Praktikum Sistematika Mikrobia"
 author:
-- name: Enny Zulaika
-  email: ennyzulaika@gmail.com
+- name: Prof. Dr. Enny Zulaika, Mp
+  email: enny@bio.its.ac.id
   affiliation: Departemen Biologi, Fakultas Sains dan Analitika Data, Institut Teknologi Sepuluh Nopember
 - name: Edo Danilyan
   email: danilyanedo7@gmail.com
