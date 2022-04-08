@@ -122,3 +122,218 @@ Create new alignment dan klik OK.
 
 -	Buka kembali software MEGA 4, pilih File, kemudian pilih Reopen data, pilih data hasil alignment yang telah dibuat. Pilih menu Phylogeny, kemudian pilih Boostrap Test of Phylogeny, pilih Neighbor Joining (perlu diperhatikan jumlah boostrap sebaiknya 1000 replikasi), dan klik Compute.
 - Pohon filogenetik selesai dibuat.
+
+#### Rekonstruksi Pohon Filogenetik dengan R
+
+Dalam proses rekonstruksi phohon filogenetik lebih lanjut menggunakan R akan menggunakan packages ggtree. Sumber utama dapat dilihat pada link berikut https://yulab-smu.top/treedata-book/
+
+Proses persiapan yaitu melakukan instalasi package. Proses install packages di bawah ini dengan menghapus tanda "#", kemudian *run* code tersebut.
+
+```{r}
+# install.packages("tidyverse")
+# install.packages("here")
+# install.packages("remotes")
+# remotes::install_github("GuangchuangYu/treeio")
+# install.packages("BiocManager")
+# BiocManager::install("ggtree")
+# BiocManager::install("DECIPHER")
+# install.packages("ape")
+# install.packages("plotly")
+# install.packages("phytools")
+```
+
+Setelah proses instalasi selesai, anda perlu melakukan pemanggilan packages untuk digunakan dengan menjalankan code di bawah ini.
+```{r}
+library(seqinr)
+library(adegenet)
+library(ape)
+library(ggtree)
+library(DECIPHER)
+library(viridis)
+library(ggplot2)
+library(here)
+library(plotly)
+library(phytools)
+```
+
+Untuk melakukan pengecekan file path atau directory, gunakan package "here". Kemudian buatlah folder khusus pada directory yang muncul. Buatlah folder "data", "output"
+
+```{r, eval=FALSE}
+here()
+dir.create("C:/Users/Lenovo/Documents/ggtree advance/data")
+```
+
+Pada tahap awal, anda perlu melakukan pemanggilan data ke dalam R dengan menjalankan code di bawah ini
+```{r}
+# masukkan atau impor data sequence dari drive ke R
+# Ubah "DNA" ke "RNA" atau "AA" jika diperlukan 
+seqs <- readDNAStringSet("C:/Users/Lenovo/Documents/praktikumsismikbits/data/bacillus.txt", format = "fasta")
+```
+
+Kita bisa melihat sequence sekilas
+```{r}
+seqs
+# Sebagai catatan, sekuens harus memiliki orientasi yang sama
+# Jika tidak, sequence dapat di- reorientasi (optional)
+seqs <- OrientNucleotides(seqs)
+```
+
+Dalam membentuk pohon filogenetik, kita perlu melakukan alignment terhadap sequence terlebih dahulu
+```{r}
+aligned <- AlignSeqs(seqs)
+```
+
+untuk melihat hasil alignment, jalankan code berikut:
+```{r eval=FALSE}
+BrowseSeqs(aligned, highlight=0)
+```
+
+Setelah sequence aligned, kita gabungkan hasil tadi menjadi 1 fasta file
+```{r}
+writeXStringSet(aligned,
+                file="bacillus_aligned.fasta")
+
+# kemudian, read sequenced yang telah di-align tadi
+dna <- read.alignment("bacillus_aligned.fasta", format = "fasta")
+```
+
+Kemudian, dilakukan perhitungan distance matrix
+```{r}
+# buat distance matrix untuk file alignment 
+D <- dist.alignment(dna, matrix = "similarity")
+temp <- as.data.frame(as.matrix(D))
+table.paint(temp, cleg=0, clabel.row=.5, clabel.col=.5)+
+  scale_color_viridis()#darker shades of gray = distance yang lebih besar 
+# kita bisa melihat pola karena data disusun berdasarkan tahun 
+# namun, kita belum bisa mencapai ke kesimpulan
+```
+
+Setelah distance matrix telah terbentuk, proses pembuatan pohon filogenetik dimulai.
+```{r}
+tre <- nj(D)
+class(tre) #semua tree yang divuat dengan {ape} package akan termasuk class phylo
+
+tre <- ladderize(tre)
+# pada tahap ini, pohon filogenetik telah terbentuk, setelah ini dilakukan proses plotting
+```
+
+Tahap memplotting di sini dapat menggunakan 2 cara, yaitu:
+1. Base R
+2. ggtree package
+
+```{r}
+# Menggunakan base R
+plot(tre, cex = 0.6)
+title("Bacillus")
+# atau
+h_cluster <- hclust(D, method = "average", members = NULL) # method = average is used for UPGMA, members can be equal to NULL or a vector with a length of size D
+plot(h_cluster, cex = 0.6)
+```
+
+Penggunaan ggtree sangat fleksible. Anda dapat melakukan kustomisasi pohon filogenetik dengan mudah dan cepat.
+
+```{r}
+# alaterntaif pertama
+ggtree(tre, yscale = "NA")+
+  geom_tiplab(hjust = -0.3, size=4, align = TRUE)+
+  xlim(0,0.5) 
+
+# cara lain
+ggtree(tre,layout = "daylight")+
+  geom_tiplab(hjust = -0.3, size=4, align = TRUE)+
+  xlim(0,0.5) 
+
+# plot a basic tree
+treeplot <- ggtree(tre) + 
+  geom_tiplab(hjust = -0.3, size=4, align = TRUE)+
+  xlim(0,0.5)
+treeplot
+```
+
+Terdapat beberapa bentuk pohon filogenetik yang dapat anda gunakan yaitu:
+1. Rectangular
+2. Circular
+3. Slanted
+```{r}
+ggtree(tre,
+       layout = "rectangular") # did anything change? this is the default
+
+ggtree(tre, 
+       layout = "circular") 
+
+ggtree(tre, 
+       layout = "slanted")
+```
+
+Anda juga dapat membentuk kladogram dengan mengatur panjang branch
+```{r}
+# mengatur branch.length = "none" akan membentuk cladogram
+ggtree(tre,
+       layout = "rectangular", branch.length = "none")
+```
+
+Anda juga dapat berinteraksi dengan plot dengan plotly package
+```{r}
+# melihat plot dengan interaktif
+ggplotly(treeplot)
+```
+
+###### Kustomisasi lebih lanjut
+```{r}
+# plot using ggtree and highlight clusters
+# change the node values for your own data
+ggtree(tre) + 
+  geom_tiplab(hjust = -0.3, size=4, align = TRUE) + 
+  geom_hilight(node=5, fill="purple", alpha = 0.2) + 
+  geom_hilight(node=15, fill="dark green", alpha = 0.2) +
+  geom_hilight(node=12, fill="gold", alpha = 0.2) +
+  xlim(0,0.5) 
+```
+Menambahkan label di pohon filogenetik
+```{r}
+#tiplab
+ggtree(midpoint.root(tre)) + 
+  geom_treescale(x = 0, y = 0, # x and y position of the treescale
+                 width = 0.01) + # width of scale
+  geom_tiplab(size = 4) + # displaying tip labels 
+  coord_cartesian(clip = 'off')+ # allows us to draw outside the plot
+  theme(plot.margin = margin(1,2,1,1, "cm")) # add space around the plot
+```
+
+Menambahkan keterangan pada node
+```{r}
+# change the node values for your own data
+p <- ggtree(tre) + 
+  geom_tiplab( size=3, align = TRUE) + 
+  geom_nodepoint(color = "orange", alpha = 0.5)
+  
+```
+
+Melakukan plotting sequence dengan pohon filogenetik
+
+```{r}
+# plot the alignment 
+dnanih <- as.DNAbin(dna)
+
+finalplot <- msaplot(p, dnanih, offset = 0.08, width = 2)+
+  scale_fill_viridis_d(alpha = 0.8)
+finalplot
+```
+
+Menyimpan plot
+```{r eval=FALSE}
+ggsave(
+  "finalplot.png",
+  plot = last_plot(),
+  device = NULL,
+  path = NULL,
+  scale = 1,
+  width = NA,
+  height = NA,
+  units = "in",
+  limitsize = TRUE,
+  bg = NULL,
+)
+```
+
+

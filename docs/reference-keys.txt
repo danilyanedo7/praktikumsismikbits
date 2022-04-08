@@ -17,4 +17,6 @@ rekonstruksi-pohon-filogenetik-dengan-phylip-v3.6.9-felsenstein-2005
 konstruksi-pohon-filogeni-menggunakan-software-mega-4.0
 mengunduh-sequence-nukleotida-dari-genbank
 rekonstruksi-pohon-filogenetik
+rekonstruksi-pohon-filogenetik-dengan-r
+kustomisasi-lebih-lanjut
 daftar-pustaka
